@@ -1,5 +1,5 @@
 import React from 'react'
-import Compo from './ComponentsProps/Compo'
+// import Compo from './ComponentsProps/Compo'
 // import UseStateHook from './4_useStateHook/useStateHook'
 import ConditionalRendering from './5_ConditionalRendering/ConditionalRendering'
 import ListRenderingmapanKeys from './6_List RenderingmapandKeys/ListRenderingmapanKeys'
@@ -16,8 +16,18 @@ import StateEvents from './StateEvents/StateEvents'
 import CustomHook from './12_CustomHook/CustomHook'
 import UseReef from './13_UseRef/UseReef'
 import { UseCallbackExample } from './14_UseMemoAndUseCallback/UseCallbackExample'
+import UseMemoAndCallback from './14_UseMemoAndUseCallback/UseMemoAndCallback'
+import Home from './15_ContextApi/Home'
+import UserProvider from './15_ContextApi/UserProvider'
+import ThemeProvider from './15_ContextApi/ThemeContext'
+import Navvbar from './15_ContextApi/Navvbar'
+import Head from './15_ContextApi/learncontext/Head'
+import Main from './16_ReactRouter/Main'
+import { BrowserRouter } from 'react-router-dom'
+import AuthProvider from './16_ReactRouter/context/AuthContext'
 
 const App = () => {
+
   return (
     <div>
       {/* components and props */}
@@ -87,7 +97,32 @@ const App = () => {
 
 
       {/* 14. useCallback & useMemo */}
-      <UseCallbackExample />
+      {/* <UseMemoAndCallback /> */}
+
+
+      {/* 15. Context Api */}
+      {/* <UserProvider>
+        <Home />
+      </UserProvider> */}
+
+      {/* <ThemeProvider>
+        <div className="min-h-screen flex items-center justify-center">
+          <Navvbar />
+        </div>
+      </ThemeProvider> */}
+
+      {/* <Head /> */}
+
+
+
+      {/* 16. React Router */}
+      <BrowserRouter>
+        <AuthProvider>
+          <Main />
+        </AuthProvider>
+      </BrowserRouter>
+
+      
 
 
 
