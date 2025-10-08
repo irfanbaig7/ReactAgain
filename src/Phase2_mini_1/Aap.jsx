@@ -4,6 +4,9 @@ import { Route, Routes } from 'react-router-dom'
 import Footer from './components/Footer'
 import { useThem } from './context/ThemeContext'
 import ProtectedRoute from './routes/ProtectedRoute'
+import CrashComponent from './components/CrashComponent'
+import AutoFocusInput from './components/AutoFocusInput'
+import ScrollExample from './components/ScrollExample'
 
 
 // Lazy load pages
@@ -30,7 +33,14 @@ const Aap = () => {
                 <Route path='/contact' element={<Contact />} />
                 <Route path='/dashboard' element={<ProtectedRoute> <Dashboard /> </ProtectedRoute>} />
                 <Route path='/login' element={<Login />} />
+                <Route path='/crash' element={<CrashComponent />} />
             </Routes>
+
+            <div className="border-t border-gray-400 mt-6 pt-6">
+              <AutoFocusInput />
+              <ScrollExample />
+            </div>
+
           </Suspense>
         </main>
         <Footer />
