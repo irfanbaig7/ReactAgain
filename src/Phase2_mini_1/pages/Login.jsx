@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/Authcontext';
 
 const Login = () => {
@@ -11,7 +11,6 @@ const Login = () => {
     login();
     navigate("/dashboard")
   }
-
 
   return (
     <div className='text-center'>
