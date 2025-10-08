@@ -27,6 +27,7 @@ import ReactLazy from './17_ReactLazyAndSuspense/ReactLazy'
 import Aap from './Phase2_mini_1/Aap'
 import { ThemeProvider } from './Phase2_mini_1/context/ThemeContext'
 import { AuthProvider } from './Phase2_mini_1/context/Authcontext'
+import ErrorBoundary from './Phase2_mini_1/components/ErrorBoundary'
 
 const App = () => {
 
@@ -132,11 +133,13 @@ const App = () => {
 
       {/* Phase 2, mini 1 */}
       <BrowserRouter>
-        <ThemeProvider>
-          <AuthProvider>
-            <Aap />
-          </AuthProvider>
-        </ThemeProvider>
+        <ErrorBoundary>
+          <ThemeProvider>
+            <AuthProvider>
+              <Aap />
+            </AuthProvider>
+          </ThemeProvider>
+        </ErrorBoundary>
       </BrowserRouter>
 
       
