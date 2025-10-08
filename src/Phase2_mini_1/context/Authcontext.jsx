@@ -1,20 +1,14 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
 
-    const [isAuthencticated, setIsAuthencticated] = useState(
-        JSON.parse(localStorage.getItem("isAuthencticated")) || false
-    )
+    const [isAuthencticated, setIsAuthencticated] = useLocalStorage("isAuthencticated", false)
     const login = () => setIsAuthencticated(true)
     const logout = () => setIsAuthencticated(false)
 
-    // Presiste to localStorage
-    useEffect(() => {
-      localStorage.setItem("isAuthencticated", JSON.stringify(isAuthencticated))
-    }, [isAuthencticated])
-    
     return (
         <AuthContext.Provider value={{ isAuthencticated, login, logout }} >
             {children}

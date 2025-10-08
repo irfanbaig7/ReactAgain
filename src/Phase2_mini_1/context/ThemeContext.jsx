@@ -1,4 +1,5 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext } from 'react'
+import { useLocalStorage } from '../hooks/useLocalStorage'
 
 // create context for theme
 const ThemeContext = createContext()
@@ -7,16 +8,12 @@ const ThemeContext = createContext()
 // create provider component
 export const ThemeProvider = ({ children }) => {
 
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light")
+  const [theme, setTheme] = useLocalStorage("theme", "light")
 
   // toggle function
   const toggleTheme = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"))
   }
-
-  useEffect(() => {
-    localStorage.setItem("theme", theme)
-  }, [theme])
 
   return (
 
