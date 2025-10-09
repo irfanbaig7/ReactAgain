@@ -9,6 +9,7 @@ import AutoFocusInput from './components/AutoFocusInput'
 import ScrollExample from './components/ScrollExample'
 import ExpensiveCalculation from './components/ExpensiveCalculation'
 import UseCallbackExample from './components/UseCallbackExample'
+import FetchProjects from './components/FetchProjects'
 
 
 // Lazy load pages
@@ -41,6 +42,7 @@ const Aap = () => {
             {/* Usecallback and useMemo Examples */}
             {/* <ExpensiveCalculation /> */}
             {/* <UseCallbackExample /> */}
+            <FetchProjects />
 
             <div className="border-t border-gray-400 mt-6 pt-6">
               <AutoFocusInput />
