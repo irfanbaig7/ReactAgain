@@ -7,6 +7,7 @@ import ProtectedRoute from './routes/ProtectedRoute'
 import CrashComponent from './components/CrashComponent'
 import AutoFocusInput from './components/AutoFocusInput'
 import ScrollExample from './components/ScrollExample'
+import ExpensiveCalculation from './components/ExpensiveCalculation'
 
 
 // Lazy load pages
@@ -35,11 +36,13 @@ const Aap = () => {
                 <Route path='/login' element={<Login />} />
                 <Route path='/crash' element={<CrashComponent />} />
             </Routes>
+            <ExpensiveCalculation />
 
             <div className="border-t border-gray-400 mt-6 pt-6">
               <AutoFocusInput />
               <ScrollExample />
             </div>
+
 
           </Suspense>
         </main>
