@@ -36,7 +36,7 @@ const Aap = () => {
                 <Route path='/login' element={<Login />} />
                 <Route path='/crash' element={<CrashComponent />} />
             </Routes>
-            <ExpensiveCalculation />
+            {/* <ExpensiveCalculation /> */}
 
             <div className="border-t border-gray-400 mt-6 pt-6">
               <AutoFocusInput />
