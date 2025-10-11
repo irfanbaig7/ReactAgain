@@ -28,6 +28,8 @@ import Aap from './Phase2_mini_1/Aap'
 import { ThemeProvider } from './Phase2_mini_1/context/ThemeContext'
 import { AuthProvider } from './Phase2_mini_1/context/Authcontext'
 import ErrorBoundary from './Phase2_mini_1/components/ErrorBoundary'
+import Phase2 from './Phase2_mini_2/Phase2'
+import { TaskProvider } from './Phase2_mini_2/context/TaskContext'
 
 const App = () => {
 
@@ -132,7 +134,7 @@ const App = () => {
 
 
       {/* Phase 2, mini 1 */}
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <ErrorBoundary>
           <ThemeProvider>
             <AuthProvider>
@@ -140,9 +142,15 @@ const App = () => {
             </AuthProvider>
           </ThemeProvider>
         </ErrorBoundary>
-      </BrowserRouter>
+      </BrowserRouter> */}
 
       
+      {/* Phase 2, mini 1 */}
+      <BrowserRouter>
+        <TaskProvider>
+          <Phase2 />
+        </TaskProvider>
+      </BrowserRouter>
 
 
 
