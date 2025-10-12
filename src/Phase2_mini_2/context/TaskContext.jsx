@@ -12,7 +12,7 @@ export const TaskProvider = ({ children }) => {
     const deleteTask = (id) => setTasks((prev) => prev.filter((t) => t.id !== id))
 
     // Note function
-    const addNote = (note) => setTasks((prev) => [...prev, note])
+    const addNote = (note) => setNotes((prev) => [...prev, note])
     const deleteNotes = (id) => setNotes((prev) => prev.filter((n) => n.id !== id))
 
     return (

@@ -1,31 +1,34 @@
-import React from 'react'
-import Tasks from './pages/Tasks'
-import Focus from './pages/Focus'
-import Notest from './pages/Notest'
+import React, { lazy, Suspense } from 'react'
 import { NavLink, Route, Routes } from 'react-router-dom'
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
+
+// Lazy load pages
+const Home = lazy(() => import("./pages/Home"));
+const Tasks = lazy(() => import("./pages/Tasks"));
+const Notes = lazy(() => import("./pages/Notest"));
+const About = lazy(() => import("./pages/About"));
+
 
 const Phase2 = () => {
   return (
 
-    <div className="min-h-screen bg-gray-100 text-gray-900">
+    <div className="flex flex-col min-h-screen bg-gray-100 text-gray-900">
       {/* Navbar */}
-      <nav className="bg-blue-600 text-white px-6 py-4 flex justify-between">
-        <h1 className="text-xl font-bold">FocusFlow</h1>
-        <div className="space-x-4">
-          <NavLink to="/" className={({ isActive }) => isActive ? "font-bold underline" : ""}>Tasks</NavLink>
-          <NavLink to="/notes" className={({ isActive }) => isActive ? "font-bold underline" : ""}>Notes</NavLink>
-          <NavLink to="/focus" className={({ isActive }) => isActive ? "font-bold underline" : ""}>Focus</NavLink>
-        </div>
-      </nav>
-
+      <Navbar />
       {/* Routes */}
-      <div className="p-6">
-        <Routes>
-          <Route path="/" element={<Tasks />} />
-          <Route path="/notes" element={<Notest />} />
-          <Route path="/focus" element={<Focus />} />
-        </Routes>
-      </div>
+      <main className='flex-grow'>
+        <Suspense fallback={<p className="text-center text-lg mt-6">Loading...</p>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/tasks" element={<Tasks />} />
+            <Route path="/notes" element={<Notes />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </Suspense>
+      </main>
+      <Footer />
     </div>
   )
 }

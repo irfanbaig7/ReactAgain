@@ -12,7 +12,7 @@ const Tasks = () => {
 
 
   return (
-    <div>
+    <div className='text-center mt-10'>
       <h2 className="text-2xl font-bold mb-3">📝 Tasks Page</h2>
       <button
         onClick={handleAdd}
@@ -21,7 +21,7 @@ const Tasks = () => {
         Add Task
       </button>
 
-      <ul className="mt-4 space-y-2">
+      <ul className="mt-4 space-y-2 max-w-sm mx-auto text-left">
         {tasks.map((task) => (
           <li key={task.id} className="bg-white p-2 rounded shadow flex justify-between">
             {task.title}
