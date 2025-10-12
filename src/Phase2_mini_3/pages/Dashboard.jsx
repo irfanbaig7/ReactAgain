@@ -27,6 +27,11 @@ const Dashboard = () => {
     }
   }
 
+  // for delete note
+  const deleteNote = useCallback((index) => {
+    setNotes((prev) => prev.filter((_, i ) => i !== index))
+  }, [setNotes])
+
   return (
     <div className="p-10 text-center">
       <h2 className="text-2xl font-bold mb-4">My Notes</h2>
@@ -50,8 +55,11 @@ const Dashboard = () => {
 
       <ul className="space-y-2">
         {notes.map((note, i) => (
-          <li key={i} className="border p-2 rounded">
+          <li key={i} className="flex justify-around items-center border p-2 rounded bg-gray-100">
             {note}
+            <button onClick={() => deleteNote(i)} className="text-red-600 font-bold">
+                delete
+            </button>
           </li>
         ))}
       </ul>
